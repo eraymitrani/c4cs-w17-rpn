@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import operator
+import timeit
 
 OPERATORS = {
 	'+': operator.add,
@@ -30,8 +31,11 @@ def calculate(arg):
 
 def main():
 	while True:
+		start = timeit.default_timer()
 		result = calculate(input('rpn calc> '))
 		print("Result:", result)
+		end = timeit.default_timer()
+		print("This calculation took: ", end - start)
 
 if __name__ == '__main__':
 	main()
